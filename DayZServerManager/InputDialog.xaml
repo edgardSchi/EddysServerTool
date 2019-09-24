@@ -1,0 +1,16 @@
+﻿<Controls:MetroWindow x:Class="DayZServerManager.ParameterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Add a parameter" WindowStartupLocation="CenterScreen"
+        Width="350" Height="181.333" 
+        FocusManager.FocusedElement="{Binding ElementName=textbox}" ResizeMode="NoResize">
+    <Grid Margin="15,15,15,16">
+
+        <Label Name="parameterLabel" Margin="-10,0,175,53" Content="Parameter:" FontSize="20"/>
+        <TextBox Name="textbox" Margin="-4,35,2,0" Height="28" VerticalAlignment="Top" FontSize="18"/>
+
+        <Button IsDefault="True" x:Name="OkButton" Click="OnOkClick" MinWidth="30" Margin="101,79,113,0" Content="Ok" Controls:ControlsHelper.ContentCharacterCasing="Normal" Style="{StaticResource AccentedSquareButtonStyle}"/>
+        <Button IsCancel="True" x:Name="CancelButton" MinWidth="30" Margin="212,79,2,0" Content="Cancel" Controls:ControlsHelper.ContentCharacterCasing="Normal" Style="{StaticResource AccentedSquareButtonStyle}"/>
+    </Grid>
+</Controls:MetroWindow>
