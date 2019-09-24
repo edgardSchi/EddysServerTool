@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DayZServerManager"
-        Title="Eddy's Server Tool" Height="450" Width="1085"
+        Title="Eddy's Server Tool" Height="450" Width="1085" MinHeight="450" MinWidth="1000"
                       
         BorderThickness="0" 
         GlowBrush="Black"
