@@ -45,6 +45,7 @@ namespace DayZServerManager
             
 
             InitiateThread();
+            guiHandler.CheckOnStartup();
         }
 
         private void InitiateThread()
@@ -59,9 +60,7 @@ namespace DayZServerManager
         {
             //serverIsRunning = true;
 
-            WriteToConsole("Starting server...");
-            UpdateStatusLabel();
-            ServerLauncher.StartServer();
+            guiHandler.StartServer();
         }
 
         private string CurrentTime()
@@ -88,7 +87,7 @@ namespace DayZServerManager
             list.Items.Add(item);
         }
 
-        private void UpdateStatusLabel()
+        public void UpdateStatusLabel()
         {
             if(serverIsRunning)
             {
@@ -254,6 +253,11 @@ namespace DayZServerManager
         void OnKillUnrespProcessBox(object sender, RoutedEventArgs e)
         {
             guiHandler.ChangeKillNonrespProcess( (bool) KillNonRespProcessBox.IsChecked);
+        }
+
+        void OnStartServerOnStartup(object sender, RoutedEventArgs e)
+        {
+            guiHandler.ChangeServerStartOnStartup((bool)StartServerWithToolBox.IsChecked);
         }
     }
 }

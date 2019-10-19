@@ -26,6 +26,7 @@ namespace DayZServerManager
         {
             window.ProcessTextBox.Text = ConfigHolder.GetProcessPath();
             window.KillNonRespProcessBox.IsChecked = ConfigHolder.killNonRespProcess;
+            window.StartServerWithToolBox.IsChecked = ConfigHolder.startServerOnStartup;
 
             foreach (string s in ConfigHolder.GetParameters())
             {
@@ -45,6 +46,7 @@ namespace DayZServerManager
                 //WriteToConsole("Config for settings found");
                 ConfigHolder.SetProcessPath((string) Properties.Settings.Default["processPath"]);
                 ConfigHolder.killNonRespProcess = (bool) Properties.Settings.Default["killNonRespProcess"];
+                ConfigHolder.startServerOnStartup = (bool)Properties.Settings.Default["startServerOnStartup"];
             }
 
             if(ConfigIO.CheckForParametersConfig())
@@ -101,6 +103,13 @@ namespace DayZServerManager
             Properties.Settings.Default["killNonRespProcess"] = kill;
             Properties.Settings.Default.Save();
             ConfigHolder.killNonRespProcess = kill;
+        }
+
+        public void ChangeServerStartOnStartup(bool start)
+        {
+            Properties.Settings.Default["startServerOnStartup"] = start;
+            Properties.Settings.Default.Save();
+            ConfigHolder.startServerOnStartup = start;
         }
 
         public bool AddMod(string mod)
@@ -199,6 +208,24 @@ namespace DayZServerManager
                         window.AddItemToList(window.ModList, ConfigHolder.ShortenModPath(s));
                     }                  
                 }
+            }
+        }
+
+        public void StartServer()
+        {
+            window.WriteToConsole("Starting server...");
+            window.UpdateStatusLabel();
+            ServerLauncher.StartServer();
+        }
+
+        //Starts the server if the option "Start Server On Startup" and and sets autostart to true
+        public void CheckOnStartup()
+        {
+            if(ConfigHolder.startServerOnStartup)
+            {
+                ConfigHolder.autorestart = true;
+                window.AutorestartSwitch.IsChecked = true;
+                StartServer();
             }
         }
 

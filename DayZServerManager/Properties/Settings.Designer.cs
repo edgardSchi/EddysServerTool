@@ -46,5 +46,17 @@ namespace DayZServerManager.Properties {
                 this["killNonRespProcess"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool startServerOnStartup {
+            get {
+                return ((bool)(this["startServerOnStartup"]));
+            }
+            set {
+                this["startServerOnStartup"] = value;
+            }
+        }
     }
 }

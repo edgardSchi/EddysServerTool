@@ -80,6 +80,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Backup.cs" />
+    <Compile Include="BackupManager.cs" />
     <Compile Include="ConfigHolder.cs" />
     <Compile Include="ConfigIO.cs" />
     <Compile Include="GUIHandler.cs" />

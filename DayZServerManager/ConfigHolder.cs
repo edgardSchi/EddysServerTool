@@ -16,6 +16,7 @@ namespace DayZServerManager
         private static ArrayList restarts = new ArrayList();
         public static bool autorestart = false;
         public static bool killNonRespProcess = false;
+        public static bool startServerOnStartup = false;
 
         private static string processPath = @"";
 

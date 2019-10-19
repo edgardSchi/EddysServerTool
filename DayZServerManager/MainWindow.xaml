@@ -124,7 +124,8 @@
                     <Button Name="SelectProcessBtn" Click="OnSetProcessBtn" Content="..." Grid.Column="2" Margin="0,31,10,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Style="{StaticResource AccentedSquareButtonStyle}"/>
                     <CheckBox Name="KillNonRespProcessBox" Content="Kill nonresponding process" Checked="OnKillUnrespProcessBox" Unchecked="OnKillUnrespProcessBox" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontSize="18"/>
                     <Label Content="Version 1.1" Margin="343,266,0,0" Grid.Column="2" Foreground="#FFA4A4A4" />
-                    
+                    <CheckBox x:Name="StartServerWithToolBox" Content="Start server on startup of tool" Checked="OnStartServerOnStartup" Unchecked="OnStartServerOnStartup" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontSize="18"/>
+
                 </Grid>
             </TabItem>
         </TabControl>
